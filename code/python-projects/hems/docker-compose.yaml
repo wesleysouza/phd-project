@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  controller:
+    container_name: controller
+    image: hems-server:1.0
+    ports:
+     - "7000:7000"
+    networks:
+      microgrid-net:
+        ipv4_address: 172.100.0.10
+  house01:
+    container_name: house01
+    image: hems-server:1.0
+    ports:
+      - "7001:7000"
+    networks:
+      microgrid-net:
+        ipv4_address: 172.100.0.20
+  house02:
+    container_name: house02
+    image: hems-server:1.0
+    ports:
+      - "7002:7000"
+    networks:
+      microgrid-net:
+        ipv4_address: 172.100.0.21
+networks:
+  microgrid-net:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.100.0.0/16
+         gateway: 172.100.0.1
