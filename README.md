@@ -15,3 +15,5 @@
 - [] Criação dos Sockets no OMNetpp;
 - [] Criação da rede no OMNetpp;
 - [] Integração do Omnetpp com as demais aplicações.
+
+![Arquitetura](./img/architecture-v-01.png)
